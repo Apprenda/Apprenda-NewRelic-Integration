@@ -102,9 +102,9 @@ namespace APMBootstrapper
         /// Assumes the New Relic agent is installed on all the Apprenda nodes and it is set to instrument all applications (IIS-based and non-IIS-based)
         /// Assumes the newrelic.config contains at least the following content to instrument the WCF container for Apprenda apps:
         ///     <instrumentation>
-	    ///         <applications>
-		///             <application name="Apprenda.WCFServiceHost.exe" />
-	    ///         </applications>
+        ///         <applications>
+        ///             <application name="Apprenda.WCFServiceHost.exe" />
+        ///         </applications>
         ///     </instrumentation>
         /// </summary>
         private static BootstrappingResult ModifyXML(BootstrappingRequest bootstrappingRequest, string filePath, string appName)
