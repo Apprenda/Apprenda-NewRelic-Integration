@@ -10,8 +10,8 @@ namespace APMBootstrapper
 {
     class ApplicationMonitoringBootstrapper : Apprenda.API.Extension.Bootstrapping.BootstrapperBase
     {
-        const string NewRelicApplicationPoolTemplate = @"<!--<applicationPool name=""$#IISAPPLICATIONNAME#$"" instrument=""true""/>-->";
-        const string NewRelicApplicationPoolValue = @"<applicationPool name=""$#IISAPPLICATIONNAME#$"" instrument=""true""/>";
+        const string NewRelicApplicationPoolTemplate = @"<!--<applicationPool name=""##IISAPPLICATIONNAME##"" instrument=""true""/>-->";
+        const string NewRelicApplicationPoolValue = @"<applicationPool name=""##IISAPPLICATIONNAME##"" instrument=""true""/>";
         /// <summary>
         /// If a Custom Property "APM Application Name" exists, open up the application and add the New Relic
         /// specific configuration inside its *.config files
@@ -85,9 +85,17 @@ namespace APMBootstrapper
             }
 
             var srcConfigFilePath = Path.Combine(bootstrappingRequest.BootstrapperPath, @"newrelic.config");
-            var dstConfigFilePath = Path.Combine(bootstrappingRequest.ComponentPath, @"newrelic.config");
+            var destinationBasePath = bootstrappingRequest.ComponentPath;
+
+            // if this is a UI, the componentpath will not take you into the root folder of the IIS application. so we need to append it
+            if (bootstrappingRequest.ComponentType == ComponentType.PublicAspNet || bootstrappingRequest.ComponentType == ComponentType.AspNet)
+            {
+                destinationBasePath = Path.Combine(destinationBasePath, bootstrappingRequest.ComponentName);
+            }
+
+            var dstConfigFilePath = Path.Combine(destinationBasePath, @"newrelic.config");
             File.Copy(srcConfigFilePath, dstConfigFilePath, true);
-            File.WriteAllText(dstConfigFilePath, Regex.Replace(File.ReadAllText(dstConfigFilePath), "$#LICENSEKEY#$", subscriptionID));
+            File.WriteAllText(dstConfigFilePath, Regex.Replace(File.ReadAllText(dstConfigFilePath), "##LICENSEKEY##", subscriptionID));
 
             // if the app is a web application hosted in IIS, we also need to include the application pool name to be instrumented in the newrelic.config file
             if (bootstrappingRequest.ComponentType == ComponentType.PublicAspNet || bootstrappingRequest.ComponentType == ComponentType.AspNet)
@@ -99,7 +107,7 @@ namespace APMBootstrapper
                 {
                     applicationPoolName += "--" + bootstrappingRequest.VersionAlias;
                 }
-                var appPoolReplacement = Regex.Replace(NewRelicApplicationPoolValue, "$#IISAPPLICATIONNAME#$", applicationPoolName);
+                var appPoolReplacement = Regex.Replace(NewRelicApplicationPoolValue, "##IISAPPLICATIONNAME##", applicationPoolName);
                 File.WriteAllText(dstConfigFilePath, Regex.Replace(File.ReadAllText(dstConfigFilePath), NewRelicApplicationPoolTemplate, appPoolReplacement));                
             }           
 
