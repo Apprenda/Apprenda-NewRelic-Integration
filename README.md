@@ -10,3 +10,4 @@ This contains the bootstrap policy code needed to integrate APM from New Relic w
 
 **Future Changes**
 1. Ability to create a custom property with the NewRelic Subscription ID and feed that into a custom newrelic.config that is placed in each application's folder
+2. Ability to tell the bootstrap policy exactly which .config files to instrument for New Relic through a Custom Property
