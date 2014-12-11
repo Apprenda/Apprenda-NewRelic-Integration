@@ -32,6 +32,10 @@ namespace APMBootstrapper
                         foreach (var value in property.Values)
                         {
                             appName = value;
+                            if (string.IsNullOrWhiteSpace(appName))
+                            {
+                                return BootstrappingResult.Failure(new[] { "The Application Name specified for this application is invalid" });
+                            }
                             break;
                         }
                     }
@@ -41,6 +45,11 @@ namespace APMBootstrapper
                         foreach (var value in property.Values)
                         {
                             subscriptionID = value;
+                            if (subscriptionID.Length < 5)
+                            {
+                                // this is likely an invalid subscription ID since it is too short in # of characters
+                                return BootstrappingResult.Failure(new[] { "The Subscription ID specified for this application is invalid" });
+                            }
                             break;
                         }
                     }
