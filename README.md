@@ -10,11 +10,12 @@ This contains the bootstrap policy code needed to integrate APM from New Relic w
 <h2>Future Changes</h2>
 - Ability to tell the bootstrap policy exactly which .config files to instrument for New Relic through a Custom Property
 
+<h2>Additional Information</h2>
 Enhancing Apprenda applications to work with your standardized corporate-wide APM tool is simple through the power of Apprenda extensibility and bootstrap policies. To learn more about bootstrap policies, visit the following links:
 - http://docs.apprenda.com/5-5/bootstrap-policies
 - http://docs.apprenda.com/5-5/custom-bootstrapper
 - http://apprenda.com/blog/customize-paas-application-bootstrap-policies/
 
-To get a better understanding of this integration, view the following videos
+To get a better understanding of this integration, view the following videos that guide you step-by-step on this integration.
 - https://apprenda.wistia.com/medias/t57au22x70
 - TBD
