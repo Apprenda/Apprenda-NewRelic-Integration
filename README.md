@@ -16,6 +16,5 @@ Enhancing Apprenda applications to work with your standardized corporate-wide AP
 - http://docs.apprenda.com/5-5/custom-bootstrapper
 - http://apprenda.com/blog/customize-paas-application-bootstrap-policies/
 
-To get a better understanding of this integration, view the following videos that guide you step-by-step on this integration.
-- https://apprenda.wistia.com/medias/t57au22x70
-- TBD
+To get a better understanding of this integration, visit the following link that includes videos that guide you step-by-step on this integration.
+- https://apprenda.wistia.com/projects/8pal4dozci
