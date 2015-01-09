@@ -32,3 +32,4 @@ To get a better understanding of this integration, visit the following link that
 - http://apprenda.com/partners/integrations/new-relic/
 - http://newrelic.com/connect/details#apprenda
 - https://apprenda.wistia.com/projects/8pal4dozci
+- http://apprenda.com/blog/apprenda-teams-new-relic-monitor-applications-enterprise-paas/
