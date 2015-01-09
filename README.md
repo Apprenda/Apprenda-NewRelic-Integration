@@ -28,5 +28,7 @@ Enhancing Apprenda applications to work with your standardized corporate-wide AP
 - http://docs.apprenda.com/5-5/custom-bootstrapper
 - http://apprenda.com/blog/customize-paas-application-bootstrap-policies/
 
-To get a better understanding of this integration, visit the following link that includes videos that guide you step-by-step on this integration.
+To get a better understanding of this integration, visit the following link that includes documentation and videos that guide you step-by-step on this integration.
+- http://apprenda.com/partners/integrations/new-relic/
+- http://newrelic.com/connect/details#apprenda
 - https://apprenda.wistia.com/projects/8pal4dozci
