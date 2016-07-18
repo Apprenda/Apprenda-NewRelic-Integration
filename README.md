@@ -24,8 +24,8 @@ This repository contains the bootstrap policy code needed to integrate APM from 
 
 <h2>Additional Information</h2>
 Enhancing Apprenda applications to work with your standardized corporate-wide APM tool is simple through the power of Apprenda extensibility and bootstrap policies. To learn more about bootstrap policies, visit the following links:
-- http://docs.apprenda.com/5-5/bootstrap-policies
-- http://docs.apprenda.com/5-5/custom-bootstrapper
+- http://docs.apprenda.com/6-0/bootstrap-policies
+- http://docs.apprenda.com/6-0/custom-bootstrapper
 - http://apprenda.com/blog/customize-paas-application-bootstrap-policies/
 
 To get a better understanding of this integration, visit the following link that includes documentation and videos that guide you step-by-step on this integration.
